@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,29 +15,7 @@
 <body>
   <div class="wrapper">
     <!-- Cabecera -->
-    <header>
-      <nav>
-        <ul class="nav-list">
-          <li class="brand">
-            <a href="index.html">
-              <img src="layaout-web/archivos/rahip-logo-blanco.svg" alt="Marca" width="100px" class="brand-icon">
-            </a>
-          </li>
-          <li class="nav-item"><a href="/nosotros">NOSOTROS</a></li>
-          <li class="nav-item"><a href="/servicios">SERVICIOS</a></li>
-          <li class="nav-item"><a href="/brief">BRIEF</a></li>
-          <li class="nav-item"><a href="/calificanos">CALIFICANOS</a></li>
-          <li class="nav-item"><a href="/contacto">CONTACTO</a></li>
-      
-          
-          <li class="user">
-            <a href="login.html">
-              <img src="layaout-web/archivos/base-datos-icono.svg" alt="Usuario" class="user-icon">
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+     <div th:replace="fragments/header :: mainHeader"></div>
     <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
     <!-- Contenido principal -->
      <!-- Botón flotante de WhatsApp -->

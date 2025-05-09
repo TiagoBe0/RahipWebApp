@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi Biblioteca</title>
+  <style>
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f2f5f7;
+      color: #333;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    /* Contenedor con overflow para permitir scroll si crece mucho */
+    .table-container {
+      max-width: 100%;
+      margin: 0 auto;
+      background-color: #fff;
+      background-image: radial-gradient(circle, #e0e4e8 1px, transparent 1px);
+      background-size: 15px 15px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto; /* permite que crezca con el contenido */
+      min-width: 600px;    /* ancho mínimo para evitar demasiado apretado */
+    }
+
+    thead {
+      position: sticky;
+      top: 0;
+      background: linear-gradient(135deg, #6a89cc, #b8e994);
+      z-index: 1;
+    }
+    thead th {
+      padding: 12px 16px;
+      color: white;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      white-space: nowrap; /* evita que el texto de los títulos haga wrap */
+    }
+
+    tbody tr {
+      transition: background-color 0.3s;
+    }
+    tbody tr:nth-child(odd) {
+      background-color: rgba(240, 243, 246, 0.8);
+    }
+    tbody tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    tbody tr:hover {
+      background-color: #d1d8e0;
+    }
+
+    td {
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      white-space: nowrap; /* evita wrap en celdas, forzando scroll si es necesario */
+    }
+    td + td {
+      border-left: 1px solid rgba(0,0,0,0.05);
+    }
+
+    /* Opcional: para que el contenedor crezca verticalmente sin límite */
+    .table-container {
+      max-height: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mi Biblioteca</h1>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Empresa</th>
+          <th>Cliente</th>
+          <th>Celular</th>
+          <th>Resumen</th>
+          <th>Objetivos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="usuario : ${clientes}">
+          <td th:text="${usuario.id}">1</td>
+          <td th:text="${usuario.nombreEmpresa}"></td>
+          <td th:text="${usuario.nombreCliente}"></td>
+          <td th:text="${usuario.celular}"></td>
+          <td th:text="${usuario.resumen}"></td>
+          <td th:text="${usuario.objetivos}"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

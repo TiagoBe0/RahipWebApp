@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,28 +19,7 @@
 </head>
 <body>
   <div class="wrapper">
-    <!-- Header -->
-    <header>
-      <nav>
-        <ul class="nav-list">
-          <li class="brand">
-            <a href="index.html">
-              <img src="layaout-web/archivos/rahip-logo-blanco.svg" alt="rahip" class="brand-icon" />
-            </a>
-          </li>
-          <li class="nav-item"><a href="nosotros.html">NOSOTROS</a></li>
-          <li class="nav-item"><a href="servicios.html">SERVICIOS</a></li>
-          <li class="nav-item"><a href="brief.html">BRIEF</a></li>
-          <li class="nav-item"><a href="calificanos.html">CALIFICANOS</a></li>
-          <li class="nav-item"><a href="contacto.html">CONTACTO</a></li>
-          <li class="user">
-            <a href="login.html">
-              <img src="layaout-web/archivos/base-datos-icono.svg" alt="Usuario" class="user-icon" />
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <!-- Header --><div th:replace="fragments/header :: mainHeader"></div>
 
     <!-- Toggle de tema -->
     <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
@@ -59,11 +38,11 @@
             Recordá que te podés comunicar por WhatsApp para una mejor atención, o bien por cualquiera de nuestras redes
           </p>
 
-          <form action="TU_ENDPOINT" method="post">
+          <form action="/cliente/registro" method="POST">
             <div class="mb-3">
               <input
                 type="text"
-                name="empresa"
+                name="nombreEmpresa"
                 class="form-control form-control-lg bg-white bg-opacity-25 border-0 rounded-pill text-white"
                 placeholder="Nombre de la empresa"
                 required

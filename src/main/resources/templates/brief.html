@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,31 +20,7 @@
 <body>
   <div class="wrapper">
 
-    <!-- Header / Navegación -->
-    <header>
-      <nav>
-        <ul class="nav-list">
-          <li class="brand">
-            <a href="index.html">
-              <img src="layaout-web/archivos/rahip-logo-blanco.svg"
-                   alt="Marca" class="brand-icon">
-            </a>
-          </li>
-          <li class="nav-item"><a href="/nosotros">NOSOTROS</a></li>
-          <li class="nav-item"><a href="/servicios">SERVICIOS</a></li>
-          <li class="nav-item"><a href="/brief">BRIEF</a></li>
-          <li class="nav-item"><a href="/calificanos">CALIFICANOS</a></li>
-          <li class="nav-item"><a href="/contacto">CONTACTO</a></li>
-          <li class="user">
-            <a href="login.html">
-              <img src="layaout-web/archivos/base-datos-icono.svg"
-                   alt="Usuario" class="user-icon">
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
+    <!-- Header / Navegación --><div th:replace="fragments/header :: mainHeader"></div>
     <!-- Botón cambio de tema -->
     <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
 
@@ -62,19 +38,19 @@
         <div class="container py-5">
           <!-- Datos Personales -->
           <h2 class="text-center text-white mb-4">Datos Personales</h2>
-          <form action="TU_ENDPOINT" method="post">
+          <form action="/cliente/registro" method="POST">
             <div class="mb-3">
-              <input type="text" name="empresa"
+              <input type="text" name="nombreEmpresa"
                      class="form-control form-control-lg bg-white bg-opacity-25 border-0 rounded-pill text-white"
                      placeholder="Nombre de la empresa" required>
             </div>
             <div class="mb-3">
-              <input type="text" name="nombre"
+              <input type="text" name="nombreCliente"
                      class="form-control form-control-lg bg-white bg-opacity-25 border-0 rounded-pill text-white"
                      placeholder="Nombre completo" required>
             </div>
             <div class="mb-3">
-              <input type="tel" name="telefono"
+              <input type="tel" name="celular"
                      class="form-control form-control-lg bg-white bg-opacity-25 border-0 rounded-pill text-white"
                      placeholder="Número de celular" required>
             </div>
@@ -82,7 +58,7 @@
             <!-- Empresa y Filosofía -->
             <h2 class="text-center text-white mt-5 mb-4">Empresa y Filosofía</h2>
             <div class="mb-3">
-              <textarea name="historia" rows="2"
+              <textarea name="resumen" rows="2"
                         class="form-control form-control-lg bg-white bg-opacity-25 border-0 rounded-pill text-white"
                         placeholder="Historia de la empresa" required></textarea>
             </div>
