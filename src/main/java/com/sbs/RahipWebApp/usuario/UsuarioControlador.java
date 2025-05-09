@@ -3,6 +3,7 @@ package com.sbs.RahipWebApp.usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,12 +22,17 @@ public class UsuarioControlador {
     return "registroUsuario.html";
     }
     
+     @GetMapping("/tabla")
+    public String tabla(ModelMap modelo){
+        modelo.put("usuarios",usuarioServicio.getAll());
+    return "tablaUsuario.html";
+    }
     
     
     @PostMapping("/registro")
-    public String registro(String nombre , String mail , String clave1 , String clave2,String id){
+    public String registro(String nombre , String mail , String clave1 , String clave2){
         
-        usuarioServicio.registro(id, nombre, mail, clave1, clave2);
+        usuarioServicio.registro( nombre, mail, clave1, clave2);
     
     return "index.html";
     }
