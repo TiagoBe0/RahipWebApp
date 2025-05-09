@@ -1,15 +1,102 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>consumado sea</div>
-    </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>rahip</title>
+  <link rel="stylesheet" href="indexestilos.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Cabecera -->
+    <header>
+      <nav>
+        <ul class="nav-list">
+          <li class="brand">
+            <a href="index.html">
+              <img src="layaout-web/archivos/rahip-logo-blanco.svg" alt="Marca" width="100px" class="brand-icon">
+            </a>
+          </li>
+          <li class="nav-item"><a href="nosotros.html">NOSOTROS</a></li>
+          <li class="nav-item"><a href="servicios.html">SERVICIOS</a></li>
+          <li class="nav-item"><a href="brief.html">BRIEF</a></li>
+          <li class="nav-item"><a href="calificanos.html">CALIFICANOS</a></li>
+          <li class="nav-item"><a href="contacto.html">CONTACTO</a></li>
+      
+          
+          <li class="user">
+            <a href="login.html">
+              <img src="layaout-web/archivos/base-datos-icono.svg" alt="Usuario" class="user-icon">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <!-- Contenido principal -->
+     <!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/+5492617501005" target="_blank" class="whatsapp-float">
+  <img src="layaout-web/archivos/iconos-redes/whatsapp-blanco.svg" alt="WhatsApp">
+</a>
+
+    <main class="content">
+      <section class="banner">
+        <h1 class="lilita-one-regular">IMPULSANDO</h1>
+        <p class="montserrat">LA CREATIVIDAD DE GRANDES MARCAS</p>
+      </section>
+
+      <section class="logos-section">
+        <div class="logos-wrapper">
+          <div class="logo-item"><img src="layaout-web/archivos/marcas-carrusel/yacopini.svg" alt="Yacopini" width="275px"></div>
+          <div class="logo-item"><img src="layaout-web/archivos/marcas-carrusel/trivento.svg" alt="Trivento" width="275px"></div>
+          <div class="logo-item"><img src="layaout-web/archivos/marcas-carrusel/fecovita.svg" alt="Fecovita" width="275px"></div>
+          <div class="logo-item"><img src="layaout-web/archivos/marcas-carrusel/chandon.svg" alt="Chandon" width="275px"></div>
+          <div class="logo-item"><img src="layaout-web/archivos/marcas-carrusel/hilton.svg" alt="Hilton" width="275px"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="gallery-container">
+          <div class="gallery-item"><img src="layaout-web/archivos/home-img/malibu.jpg" alt="Imagen 1"></div>
+          <div class="gallery-item"><img src="layaout-web/archivos/home-img/david-castro.jpg" alt="Imagen 2"></div>
+          <div class="gallery-item"><img src="layaout-web/archivos/home-img/helena.jpg" alt="Imagen 3"></div>
+          <div class="gallery-item"><img src="layaout-web/archivos/home-img/la-seleccion.jpg" alt="Imagen 4"></div>
+          <div class="gallery-item"><img src="layaout-web/archivos/home-img/laboratorio-aguero.jpg" alt="Imagen 5"></div>
+          <div class="gallery-item"><img src="layaout-web/archivos/home-img/mariano-werner.jpg" alt="Imagen 6"></div>
+          <div class="gallery-item"><img src="layaout-web/archivos/home-img/wernismo.jpg" alt="Imagen 7"></div>
+          <div class="gallery-item"><img src="layaout-web/archivos/home-img/mubarak.jpg" alt="Imagen 8"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-left">
+        <p>RAHIP Estudio Creativo | Todos los derechos reservados 2025</p>
+      </div>
+      <div class="footer-right">
+        <a href="#" class="social-icon"><img src="layaout-web/archivos/iconos-redes/whatsapp-blanco.svg" alt="WhatsApp"></a>
+        <a href="#" class="social-icon"><img src="layaout-web/archivos/iconos-redes/instagram-blanco.svg" alt="Instagram"></a>
+        <a href="#" class="social-icon"><img src="layaout-web/archivos/iconos-redes/linkedin-blanco.svg" alt="LinkedIn"></a>
+        <a href="#" class="social-icon"><img src="layaout-web/archivos/iconos-redes/mail-blanco.svg" alt="Email"></a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const button = document.getElementById('theme-toggle');
+      body.classList.toggle('dark-theme');
+      button.textContent = body.classList.contains('dark-theme') ? '☀️' : '🌙';
+    }
+  </script>
+  
+</body>
 </html>
