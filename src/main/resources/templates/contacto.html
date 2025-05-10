@@ -19,9 +19,29 @@
 </head>
 <body>
   <div class="wrapper">
-    <!-- Header --><div th:replace="fragments/header :: mainHeader"></div>
-
-    <!-- Toggle de tema -->
+    <header>
+    <nav>
+      <ul class="nav-list">
+        <li class="brand">
+          <a th:href="@{/index}">
+            <img src="layaout-web/archivos/rahip-logo-blanco.svg"
+                 alt="Marca" width="100px" class="brand-icon">
+          </a>
+        </li>
+        <li class="nav-item"><a th:href="@{/nosotros}">NOSOTROS</a></li>
+        <li class="nav-item"><a th:href="@{/servicios}">SERVICIOS</a></li>
+        <li class="nav-item"><a th:href="@{/brief}">BRIEF</a></li>
+        <li class="nav-item"><a th:href="@{/calificanos}">CALIFICÁNOS</a></li>
+        <li class="nav-item"><a th:href="@{/contacto}">CONTACTO</a></li>
+        <li class="user">
+          <a th:href="@{/login}">
+            <img src="layaout-web/archivos/base-datos-icono.svg"
+                 alt="Usuario" class="user-icon">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
     <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
 
     <!-- WhatsApp flotante -->
